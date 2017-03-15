@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  scope path: "api" do
-    resources :shows
-  end
+  devise_for :users
+  scope({path: "api"}) {
+    resources(:shows)
+  }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
